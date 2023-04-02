@@ -1,0 +1,13 @@
+RunAsDaemon 0
+HardwareAccel 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+NewCircuitPeriod 15
+MaxCircuitDirtiness 15
+UseEntryGuards 0
+CircuitBuildTimeout 5
+ExitRelay 0
+RefuseUnknownExits 0
+ClientOnly 1
+DataDirectory /var/lib/tor
+Log notice stdout
+SocksPort 0

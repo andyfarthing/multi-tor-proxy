@@ -1,0 +1,41 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="50" name="JavaScript" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredTitleElement" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="IncorrectHttpHeaderInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="customHeaders">
+        <set>
+          <option value="X-Requested-With" />
+          <option value="Sec-Fetch-Dest" />
+          <option value="Sec-Fetch-Mode" />
+          <option value="Sec-Fetch-Site" />
+          <option value="Upgrade-Insecure-Requests" />
+          <option value="Sec-Fetch-User" />
+          <option value="sec-fetch-site" />
+          <option value="sec-fetch-mode" />
+          <option value="sec-fetch-user" />
+          <option value="sec-fetch-dest" />
+          <option value="rtt" />
+          <option value="downlink" />
+          <option value="ect" />
+          <option value="sec-ch-ua" />
+          <option value="sec-ch-ua-mobile" />
+          <option value="upgrade-insecure-requests" />
+        </set>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="JSUnusedLocalSymbols" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SpellCheckingInspection" enabled="true" level="TYPO" enabled_by_default="true">
+      <option name="processCode" value="false" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
