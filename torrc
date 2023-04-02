@@ -15,4 +15,3 @@ ExitNodes {gb},{de},{ie},{fr},{es},{it}
 AllowSingleHopCircuits 1
 DataDirectory /var/lib/tor
 Log notice stdout
-SocksPort 0
