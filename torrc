@@ -5,13 +5,9 @@ ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 NewCircuitPeriod 60
 MaxCircuitDirtiness 120
 UseEntryGuards 1
-NumEntryGuards 8
 CircuitBuildTimeout 5
 ExitRelay 0
 RefuseUnknownExits 0
 ClientOnly 1
-StrictNodes 1
-ExitNodes {gb},{de},{ie},{fr},{es},{it}
-AllowSingleHopCircuits 1
 DataDirectory /var/lib/tor
 Log notice stdout
