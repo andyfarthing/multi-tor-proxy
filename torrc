@@ -1,13 +1,18 @@
 RunAsDaemon 0
+CookieAuthentication 0
 HardwareAccel 1
 ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-NewCircuitPeriod 15
-MaxCircuitDirtiness 15
-UseEntryGuards 0
+NewCircuitPeriod 60
+MaxCircuitDirtiness 120
+UseEntryGuards 1
+NumEntryGuards 8
 CircuitBuildTimeout 5
 ExitRelay 0
 RefuseUnknownExits 0
 ClientOnly 1
+StrictNodes 1
+ExitNodes {gb},{de},{ie},{fr},{es},{it}
+AllowSingleHopCircuits 1
 DataDirectory /var/lib/tor
 Log notice stdout
 SocksPort 0

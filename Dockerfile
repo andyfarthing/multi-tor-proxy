@@ -10,14 +10,16 @@ RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/ap
     echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/testing'   >> /etc/apk/repositories && \
     apk -U update && \
     apk -U upgrade && \
-    apk -v add --no-cache tor@edge obfs4proxy@edge haproxy@edge
+    apk -v add --no-cache curl tor@edge obfs4proxy@edge haproxy@edge
 
 COPY --chown=tor:root torrc /etc/tor
 COPY --chown=tor:root haproxy.cfg /etc/haproxy
 COPY --chown=tor:root entrypoint.sh /usr/local/bin
+COPY --chown=tor:root connection_check_amazon.sh /usr/local/bin
 
 RUN chmod 700 /var/lib/tor && \
-    chmod +x /usr/local/bin/entrypoint.sh
+    chmod +x /usr/local/bin/entrypoint.sh && \
+    chmod +x /usr/local/bin/connection_check_amazon.sh
 
 USER tor
 
