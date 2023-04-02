@@ -12,11 +12,11 @@ RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/ap
     apk -U upgrade && \
     apk -v add --no-cache curl tor@edge obfs4proxy@edge haproxy@edge privoxy@edge
 
-COPY --chown=tor:root torrc /etc/tor
-COPY --chown=tor:root haproxy.cfg /etc/haproxy
-COPY --chown=tor:root privoxy.cfg /
-COPY --chown=tor:root entrypoint.sh /usr/local/bin
-COPY --chown=tor:root connection_check_amazon.sh /usr/local/bin
+COPY --chown=tor:root torrc /usr/etc/tor/
+COPY --chown=tor:root haproxy.cfg /usr/etc/haproxy/
+COPY --chown=tor:root privoxy.cfg /usr/etc/privoxy/
+COPY --chown=tor:root entrypoint.sh /usr/local/bin/
+COPY --chown=tor:root connection_check_amazon.sh /usr/local/bin/
 
 RUN chmod 700 /var/lib/tor && \
     chmod +x /usr/local/bin/entrypoint.sh && \
