@@ -10,7 +10,7 @@ sed -i '/^ SocksPort/d' /usr/etc/tor/torrc
 i=0
 while [ $i -le "$NUMBER_OF_CONNECTIONS" ]; do
   PORT=$((STARTING_PORT_NUMBER + i))
-  echo "  server connection-$i 127.0.0.1:$PORT check inter 15s fall 1 rise 1" >> /usr/etc/haproxy/haproxy.cfg
+  echo "  server $PORT 127.0.0.1:$PORT check inter 15s fall 1 rise 1" >> /usr/etc/haproxy/haproxy.cfg
   echo " SocksPort 0.0.0.0:$PORT" >> /usr/etc/tor/torrc
   i=$(( i + 1 ))
 done
