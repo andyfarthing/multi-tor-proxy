@@ -4,7 +4,7 @@ LABEL name="tor-multi-proxy"
 LABEL version="1.0.0"
 
 ENV NUMBER_OF_CONNECTIONS=5
-ENV STARING_PORT_NUMBER=9050
+ENV STARTING_PORT_NUMBER=9050
 
 RUN echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     echo '@edge https://dl-cdn.alpinelinux.org/alpine/edge/testing'   >> /etc/apk/repositories && \
