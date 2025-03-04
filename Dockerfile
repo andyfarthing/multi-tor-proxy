@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:3.21.3
 LABEL maintainer="Andy Farthing <contact@andyfarthing.com>"
 LABEL name="tor-multi-proxy"
 LABEL version="1.0.1"

@@ -1,0 +1,12 @@
+# OS generated files
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Build artifacts
+build/
+dist/
