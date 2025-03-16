@@ -1,6 +1,6 @@
 FROM alpine:3.21.3
 LABEL maintainer="Andy Farthing <contact@andyfarthing.com>"
-LABEL name="tor-multi-proxy"
+LABEL name="multi-tor-proxy"
 LABEL version="1.0.1"
 
 ENV NUMBER_OF_CONNECTIONS=5
@@ -16,7 +16,6 @@ COPY --chown=tor:root torrc /usr/etc/tor/
 COPY --chown=tor:root haproxy.cfg /usr/etc/haproxy/
 COPY --chown=tor:root privoxy.cfg /usr/etc/privoxy/
 COPY --chown=tor:root build_connections.sh /usr/local/bin/
-COPY --chown=tor:root connection_check_amazon.sh /usr/local/bin/
 
 RUN chmod 700 /var/lib/tor && \
     chmod +x /usr/local/bin/build_connections.sh && \
