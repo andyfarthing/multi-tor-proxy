@@ -2,8 +2,8 @@ name: Build and Push Docker Image
 
 on:
   push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*'  # Run only on semantic version tags (vX.X.X)
+    branches:
+      - main
 
 jobs:
   docker-build:
@@ -39,5 +39,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}:latest
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}:${{ steps.meta.outputs.tags }}
           cache-to: type=inline
