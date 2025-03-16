@@ -18,8 +18,7 @@ COPY --chown=tor:root privoxy.cfg /usr/etc/privoxy/
 COPY --chown=tor:root build_connections.sh /usr/local/bin/
 
 RUN chmod 700 /var/lib/tor && \
-    chmod +x /usr/local/bin/build_connections.sh && \
-    chmod +x /usr/local/bin/connection_check_amazon.sh
+    chmod +x /usr/local/bin/build_connections.sh
 
 USER tor
 
