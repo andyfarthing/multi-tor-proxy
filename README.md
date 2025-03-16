@@ -214,9 +214,60 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Privoxy](https://www.privoxy.org/) for the web proxy functionality
 - [Alpine Linux](https://alpinelinux.org/) for the lightweight base image
 
+## CI/CD with GitHub Actions
+
+This project includes a GitHub Actions workflow that automatically builds and pushes the Docker image to GitHub Container Registry (GHCR) whenever changes are committed to the main branch.
+
+### Features
+
+- **Automated Builds**: Automatically builds the Docker image on pushes to the main branch
+- **Multi-Platform Support**: Builds images for both AMD64 and ARM64 architectures
+- **Container Registry**: Pushes images to GitHub Container Registry (GHCR)
+- **Smart Tagging**: Uses repository metadata for intelligent image tagging
+- **Caching**: Implements build caching to speed up subsequent builds
+- **Vulnerability Scanning**: Scans images for security vulnerabilities using Trivy
+- **Failure Notifications**: Sends notifications on build failures (requires Slack webhook configuration)
+
+### Using the Container Registry Image
+
+To use the pre-built image from GitHub Container Registry:
+
+```bash
+# Pull the image (replace USERNAME with your GitHub username)
+docker pull ghcr.io/USERNAME/multi-tor-proxy:latest
+
+# Run the container
+docker run -d --name multi-tor-proxy \
+  -p 8118:8118 \
+  -p 16859:16859 \
+  -p 80:80 \
+  -e NUMBER_OF_CONNECTIONS=5 \
+  -e STARTING_PORT_NUMBER=9050 \
+  ghcr.io/USERNAME/multi-tor-proxy:latest
+```
+
+### Workflow Configuration
+
+The workflow is defined in `.github/workflows/docker-build-push.yml` and includes:
+
+1. Authentication with GHCR using GitHub's built-in token
+2. Setting up Docker Buildx for multi-platform support
+3. Extracting metadata from the repository for proper image tagging
+4. Building the Docker image using the Dockerfile in the repository
+5. Pushing the image to GHCR under your GitHub account namespace
+6. Implementing caching mechanisms to speed up subsequent builds
+7. Adding labels for better image discoverability and management
+8. Vulnerability scanning with Trivy
+9. Error handling and notifications for build failures
+
 ## Changelog
 
-### v1.0.1 (Current)
+### v1.0.2 (Current)
+
+- Added GitHub Actions workflow for automated builds and GHCR publishing
+- Multi-platform support (AMD64 and ARM64)
+
+### v1.0.1
 
 - Minor bug fixes and improvements
 
